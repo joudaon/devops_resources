@@ -10,6 +10,7 @@
     - [Useful tools](#useful-tools)
     - [Cheat Sheet](#cheat-sheet)
     - [minikube](#minikube)
+      - [Install minikube](#install-minikube)
       - [Cheat Sheet](#cheat-sheet-1)
   - [Jenkins](#jenkins)
   - [Python](#python)
@@ -58,27 +59,53 @@ $> docker run --name web nginx
 
 ### minikube
 
+minikube is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes.
+
+#### Install minikube
+
+```sh
+#!/bin/bash
+
+MINIKUBE_VERSION="v1.22.0"
+
+echo "----> Installing minikube."
+
+cd /tmp
+curl -Lo minikube https://github.com/kubernetes/minikube/releases/download/$MINIKUBE_VERSION/minikube-linux-amd64
+chmod +x minikube
+cp minikube /usr/local/bin && rm minikube
+echo "Minikube Version --> $(minikube version)"
+
+echo "--> Minikube successfully installed."
+```
+
 #### Cheat Sheet
 
 ```sh
 # Start minikube
 $> minikube start
-
+# Start minikube with docker engine
+$> minikube start --driver=docker
 # Start minikube with different machine flavor
 $> minikube start --memory 5120 --cpus=4
-
 # Start minikube with specific k8s version
 $> minikube start --kubernetes-version v1.11.0
-
 # Stop minikube
 $> minikube stop
-
 # Delete minikube
 $> minikube delete
-
 # Get minikube ip
 $> minikube ip
+# Enable ingress addon
+$> minikube addons enable ingress
+# Enable metrics-server addon
+$> minikube addons enable metrics-server
+# Getting the NodePort using the service command
+$> minikube service --url <service-name>
+# Get minikube node list
+$> minikube node list
 ```
+
 ## Jenkins
 
 ## Python
