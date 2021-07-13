@@ -15,6 +15,7 @@
   - [Jenkins](#jenkins)
   - [Python](#python)
     - [Furher resources](#furher-resources)
+  - [Terraform](#terraform)
   - [Vagrant](#vagrant)
     - [Downlaod Vagrant Ubuntu](#downlaod-vagrant-ubuntu)
     - [Further resources](#further-resources)
@@ -113,6 +114,10 @@ $> minikube node list
 ### Furher resources
 
 - [Python Package Index](https://pypi.org/)
+
+## Terraform
+
+- [AWS Provider](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
 
 ## Vagrant
 
