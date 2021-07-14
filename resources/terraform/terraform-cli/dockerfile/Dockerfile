@@ -12,6 +12,10 @@ RUN apt-get update \
     && echo "--> Terraform version:" \
     && terraform version
 
+RUN groupadd -r aws && useradd --no-log-init -r -g aws aws
+
+USER aws
+
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
