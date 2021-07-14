@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 ARG TERRAFORM_VERSION
 
 RUN apt-get update \
-    && apt-get install -y byobu telnet tree unzip vim wget \
+    && apt-get install -y byobu git telnet tree unzip vim wget \
     && cd /tmp \
     && wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
     && unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
@@ -12,9 +12,9 @@ RUN apt-get update \
     && echo "--> Terraform version:" \
     && terraform version
 
-RUN groupadd -r aws && useradd --no-log-init -r -g aws aws
+# RUN groupadd -r aws && useradd --no-log-init -r -g aws aws
 
-USER aws
+# USER aws
 
 COPY entrypoint.sh /entrypoint.sh
 

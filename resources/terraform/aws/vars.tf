@@ -1,3 +1,3 @@
-variable secrets {
-  type = map
+variable "secrets" {
+  type = map(any)
 }

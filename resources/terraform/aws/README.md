@@ -4,7 +4,7 @@
 
 1. Create a `terraform.tfvars` file with the following content:
 
-```json
+```
 secrets = {
   access_key = "<my_access_key>"
   secret_key = "<my_secret_key>"
